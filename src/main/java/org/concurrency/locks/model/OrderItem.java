@@ -21,6 +21,8 @@ public class OrderItem {
     private int number;
     // 请求来源
     private String source;
+    // 记录创建时间
     private long createTime;
+    // 记录修改时间
     private long updateTime;
 }

@@ -23,6 +23,8 @@ public class Product {
     private int price;
     // 版本号
     private long version;
+    // 创建时间
     private long createTime;
+    // 修改时间
     private long updateTime;
 }
