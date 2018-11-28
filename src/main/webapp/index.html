@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>限时商品购买</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body class="container" style="padding:10px 0">
+<form role="form">
+    <!--选项 -->
+    <div class="form-group">
+        <button type="button" class="btn btn-primary col-md-3" id="btn_purchase_v1"
+                onclick="startPurchaseV1()">开始购买(悲观锁控制并发)
+        </button>
+        <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v2"
+                onclick="startPurchaseV2()">开始购买(乐观锁控制并发)
+        </button>
+    </div>
+
+    <!-- 结果展示 -->
+    <div class="form-group">
+        <textarea name="output" class="form-control" rows="20" id="txt_output"></textarea>
+    </div>
+</form>
+</body>
+
+</html>
