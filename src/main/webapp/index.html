@@ -16,10 +16,13 @@
     <!--选项 -->
     <div class="form-group">
         <button type="button" class="btn btn-primary col-md-3" id="btn_purchase_v1"
-                onclick="startPurchaseV1()">开始购买(悲观锁控制并发)
+                onclick="startPurchaseV1()">开始购买(悲观锁)
         </button>
         <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v2"
-                onclick="startPurchaseV2()">开始购买(乐观锁控制并发)
+                onclick="startPurchaseV2()">开始购买(乐观锁)
+        </button>
+        <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v3"
+                onclick="startPurchaseV3()">开始购买(可重入乐观锁)
         </button>
     </div>
 

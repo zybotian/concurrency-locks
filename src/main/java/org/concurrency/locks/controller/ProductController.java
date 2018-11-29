@@ -52,4 +52,21 @@ public class ProductController {
             return ResponseUtils.getByErrorCode(userId, ex.getErrorCode());
         }
     }
+
+    @RequestMapping(path = "/purchase/v3", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @ResponseBody
+    public String purchaseV3(@RequestParam("userId") Integer userId, @RequestParam("productId") Long productId) {
+        if (userId == null || productId == null) {
+            return ResponseUtils.getByErrorCode(userId, ErrorCode.INVALID_PARAM);
+        }
+        try {
+            boolean purchaseResult = productBiz.purchaseV3(userId, productId, "purchase_v3");
+            if (purchaseResult) {
+                return ResponseUtils.getSuccess(userId);
+            }
+            return ResponseUtils.getFailed(userId);
+        } catch (BusinessException ex) {
+            return ResponseUtils.getByErrorCode(userId, ex.getErrorCode());
+        }
+    }
 }

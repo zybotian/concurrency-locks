@@ -33,6 +33,8 @@ insert into `db_conc_lock`.`product` values('2018112815220001','1','小米8限�
 '1543389825000');
 insert into `db_conc_lock`.`product` values('2018112815220002','1','小米电视4S限时抢购','5','249900','0','1543389825000',
 '1543389825000');
+insert into `db_conc_lock`.`product` values('2018112815220003','1','小米MIX2S限时抢购','5','269900','0','1543389825000',
+'1543389825000');
 
 CREATE TABLE IF NOT EXISTS `db_conc_lock`.`order_item`(
   `id`              BIGINT          NOT NULL AUTO_INCREMENT  COMMENT '自增主键',
