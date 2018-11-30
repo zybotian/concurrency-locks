@@ -2,9 +2,9 @@ package org.concurrency.locks.biz;
 
 import org.concurrency.locks.dao.DemoDao;
 import org.concurrency.locks.model.Demo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 
 /**
  * @author tianbo
@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 @Service
 public class DemoBiz {
 
-    @Resource(name = "demoDao")
+    @Autowired
     private DemoDao demoDao;
 
     public int insert(Demo demo) {

@@ -37,24 +37,29 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="demoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <!--指定映射文件 -->
-        <property name="mapperInterface" value="org.concurrency.locks.dao.DemoDao"/>
-        <!-- 指定sql会话工厂-->
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-    </bean>
+    <!--<bean id="demoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--&lt;!&ndash;指定映射文件 &ndash;&gt;-->
+        <!--<property name="mapperInterface" value="org.concurrency.locks.dao.DemoDao"/>-->
+        <!--&lt;!&ndash; 指定sql会话工厂&ndash;&gt;-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
 
-    <bean id="productDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <!--指定映射文件 -->
-        <property name="mapperInterface" value="org.concurrency.locks.dao.ProductDao"/>
-        <!-- 指定sql会话工厂-->
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-    </bean>
+    <!--<bean id="productDao" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--&lt;!&ndash;指定映射文件 &ndash;&gt;-->
+        <!--<property name="mapperInterface" value="org.concurrency.locks.dao.ProductDao"/>-->
+        <!--&lt;!&ndash; 指定sql会话工厂&ndash;&gt;-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
 
-    <bean id="orderItemDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <!--指定映射文件 -->
-        <property name="mapperInterface" value="org.concurrency.locks.dao.OrderItemDao"/>
-        <!-- 指定sql会话工厂-->
+    <!--<bean id="orderItemDao" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--&lt;!&ndash;指定映射文件 &ndash;&gt;-->
+        <!--<property name="mapperInterface" value="org.concurrency.locks.dao.OrderItemDao"/>-->
+        <!--&lt;!&ndash; 指定sql会话工厂&ndash;&gt;-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.concurrency.locks.dao" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 

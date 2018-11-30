@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -33,10 +31,10 @@ public class ProductBiz {
      */
     private static final int REENTRANTLOCK_RETRY_TIMES = 3;
 
-    @Resource(name = "orderItemDao")
+    @Autowired
     private OrderItemDao orderItemDao;
 
-    @Resource(name = "productDao")
+    @Autowired
     private ProductDao productDao;
 
     @Autowired
