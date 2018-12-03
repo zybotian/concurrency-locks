@@ -24,6 +24,7 @@ public enum ErrorCode {
      */
     OBJECT_NOT_EXISTS(10002001, "object not exists", "对象不存在"),
     DB_SERVICE_ERROR(10002002, "database service error", "数据库服务异常"),
+    DB_CONFIG_ERROR(10002003, "database config error", "数据库配置错误"),
 
     /**
      * 参数校验类
