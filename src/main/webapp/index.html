@@ -15,23 +15,23 @@
 <form role="form">
     <!--选项 -->
     <div class="form-group">
-        <button type="button" class="btn btn-primary col-md-3" id="btn_purchase_v1"
+        <button type="button" class="btn btn-default col-md-3" id="btn_purchase_v1"
                 onclick="startPurchaseV1()">开始购买(悲观锁)
         </button>
-        <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v2"
+        <button type="button" class="btn btn-primary col-md-3" id="btn_purchase_v2"
                 onclick="startPurchaseV2()">开始购买(乐观锁)
         </button>
         <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v3"
                 onclick="startPurchaseV3()">开始购买(可重入乐观锁)
         </button>
-        <button type="button" class="btn btn-info col-md-3" id="btn_purchase_v4"
+        <button type="button" class="btn btn-success col-md-3" id="btn_purchase_v4"
                 onclick="startPurchaseV4()">开始购买(redis+Lua)
         </button>
     </div>
 
     <!-- 结果展示 -->
-    <div class="form-group">
-        <textarea name="output" class="form-control" rows="20" id="txt_output"></textarea>
+    <div class="jumbotron" id="txt_output">
+        <!--<textarea name="output" class="form-control" rows="20" id="txt_output"></textarea>-->
     </div>
 </form>
 </body>
