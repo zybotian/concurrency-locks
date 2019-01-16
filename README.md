@@ -92,8 +92,8 @@ public class Lock {
 ```
 #### 4. Redis + Lua脚本
 利用Lua脚本的原子性,将库存查询,库存检查,库存扣减以及记录购买信息都放在Lua中实现,待抢购结束,再将redis数据同步到mysql.
-```lua
-    lua = "local stockConfig = 'activity_purchase_stock_config_hashmap_'..KEYS[1]\n" +
+```java
+    String lua = "local stockConfig = 'activity_purchase_stock_config_hashmap_'..KEYS[1]\n" +
                 "local stockConfigKey = 'activity_purchase_stock_config_stock_key_'..KEYS[1]\n" +
                 "local userPurchaseProductList = 'activity_purchase_user_product_list_'..KEYS[1]\n" +
                 "local stock = redis.call('hget', stockConfig, stockConfigKey)\n" +
@@ -105,6 +105,8 @@ public class Lock {
                 "redis.call('hset', stockConfig, stockConfigKey, stockNumber-1)\n" +
                 "redis.call('rpush', userPurchaseProductList, ARGV[1]..'-'..ARGV[2]..'-'..ARGV[3])\n" +
                 "return 2\n";
+    RedisScript<Long> luaScript = new DefaultRedisScript<>(lua, Long.class);
+    Long result = redisTemplate.execute(luaScript, keys, argv1, argv2, argv3);
 ```
 每次抢购之后,检查执行结果,如果是库存为0,执行数据同步
 ```java
