@@ -1,6 +1,6 @@
 # concurrency-locks
 
-示例项目以**限时抢购**为背景,总结了3重常用的并发控制策策略.
+示例项目以**限时抢购**为背景,总结了3种常用的并发控制策策略.
 
 设计的表结构为:
 
@@ -41,13 +41,13 @@ CREATE TABLE IF NOT EXISTS `db_conc_lock`.`order_item`(
 
 #### 1. 悲观锁
    1. 查询产品
-   **select** where `id` = ? **for update**
+   - **select** where `id` = ? **for update**
    2. 检查库存
-   if (product.getStock()>0)
+   - if (product.getStock()>0)
    3. 修改库存
-   **update** `product` **set `stock` = stock-1** where `id` = ?
+   - **update** `product` **set `stock` = stock-1** where `id` = ?
    4. 插入购买记录
-   insert into `order_item`
+   - insert into `order_item`
 #### 2. 乐观锁
    1. 查询产品
    - **select** where `id` = ?
