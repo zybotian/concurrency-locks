@@ -119,3 +119,9 @@ public class Biz {
     }
 }
 ```
+
+#### 5. 分布式锁
+- 基于数据库乐观锁
+- 基于数据库悲观锁
+- 基于zookeeper
+- 基于Redis
