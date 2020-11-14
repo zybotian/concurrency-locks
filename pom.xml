@@ -17,7 +17,7 @@
         <lombok.version>1.16.10</lombok.version>
         <mysql.connector.version>5.1.36</mysql.connector.version>
         <servlet.version>3.1.0</servlet.version>
-        <jackson.version>2.8.7</jackson.version>
+        <jackson.version>2.11.3</jackson.version>
         <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
